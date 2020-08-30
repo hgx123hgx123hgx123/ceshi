@@ -1,0 +1,19 @@
+/* components/SearchInput/SearchInput.wxss */
+.search_input {
+  height: 70rpx;
+  padding: 10rpx;
+  background-color: #F8554D;
+}
+.search_input navigator {
+  height: 100%;
+  /* 弹性盒子*/
+  display: flex;
+  /* justify-content 用于设置或检索弹性盒子元素在主轴（横轴）方向上的对齐方式。(当前是定义左右对齐)*/
+  justify-content: center;
+  /* align-items 属性定义flex子项在flex容器的当前行的侧轴（纵轴）方向上的对齐方式。(当前是定义上下对齐)*/
+  align-items: center;
+  background-color: #fff;
+  /* 这个属性允许你为元素添加圆角边框！*/
+  border-radius: 20rpx;
+  color: #666;
+}

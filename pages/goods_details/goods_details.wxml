@@ -1,0 +1,61 @@
+<view class="goods_detail">
+    <!-- 商品详情轮播图
+        商品详情中顶部的图片是滑动的，所以要使用滑动组件<swiper></swiper>
+         wx:for="{{goodsDitail.pics}}" 循环轮播图的数据 -->
+        <swiper indicator-dots autoplay circular interval="2000">
+            <swiper-item 
+            wx:for="{{goodsDitail.pics}}" 
+            wx:key="pics_id"
+            bindtap="handlePreviewImage"
+            data-url="{{item.pics_mid}}">
+                <!-- mode="widthFix"缩放模式，宽度不变，高度自动变化-->
+                <image mode="widthFix" src="{{item.pics_mid}}" />
+            </swiper-item>
+        </swiper>
+        <!-- 商品价格 -->
+        <view class="goods_price">￥{{goodsDitail.goods_price}}</view>
+        <!-- 商品标题及收藏 -->
+        <view class="detail_content">
+            <!-- {{goodsDitail.goods_name}} 获取商品名称 -->
+            <view class="detail_title">{{goodsDitail.goods_name}}{{goodsDitail.goods_name}}</view>
+            <!-- 商品收藏 -->
+            <!-- data-goods_id="{{goodsDitail.goods_id}}"点击收藏时的goods_id -->
+            <view class="detail_collect" bindtap="handleCollect">
+                <!-- {{isCollect?'icon-collection-b':'icon-shoucang'}}
+                    isCollect?是否收藏，'icon-collection-b'已收藏，'icon-shoucang'未收藏 -->
+                <view class="iconfont {{isCollect?'icon-collection-b':'icon-shoucang'}}">
+                </view>
+                <view class="collect">收藏</view>
+            </view>
+        </view>
+        <view class="image-text">
+            <view class="title">图文详情</view>
+            <view class="image">
+                <!-- 富文本。 -->
+                <!-- 接口返回的内容是html标签的情况，为了让把小程序不识别的html标签转成可识别的wxml，我们用到了富文本。 -->
+               <rich-text nodes="{{goodsDitail.goods_introduce}}"></rich-text> 
+            </view>
+        </view>
+        <!-- 底部购物车 -->
+        <view class="dedail_bottom">
+            <view class="servie">
+                <view class="iconfont icon-kefu"></view>
+                <view class="servie_title">客服</view>
+            </view>
+            <view class="share">
+                <view class="iconfont icon-fenxiang"></view>
+                <view class="share_title">分享</view>
+            </view>
+            <!-- open-type="switchTab" 跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面 -->
+            <navigator class="cart" open-type="switchTab" url="/pages/cart/cart">
+                <view class="iconfont icon-icon-"></view>
+                <view class="cart_title">购物车</view>
+            </navigator>
+            <view class="addd_cart">
+                <view class="title" bindtap="handleAddCart">加入购物车</view>
+            </view>
+            <view class="buy">
+                <view class="title">立即购买</view>
+            </view>
+        </view>
+</view>

@@ -1,0 +1,49 @@
+<view class="goods_list">
+    <!-- 搜索框 -->
+    <SearchInput/>
+    <!-- 商品列表内容 -->
+    <view class="goods_content" >
+        <view class="goods_content_title">
+            <!-- 商品大标题 -->
+            <!-- data-index=“{{index}}” 
+                就是取出 wx:for="{{titles}}"
+                titles 这个数组里的每个下标-->
+             <!-- wx:for="{{titles}} 循环数据  
+                  {{item}}渲染数据 -->
+             <!-- {{index===currenrIndex?'active':''}}
+                  被点击的标题会呈现设置的颜色，没有被点击的标题颜色默认是字体的颜色 -->
+            <view class="title">
+                <view class="title_list {{index===currenrIndex?'active':''}}"
+                    wx:for="{{titles}}"
+                    bindtap="handleSelectedt" 
+                    data-index="{{index}}"
+                    >
+                    {{item}}
+                </view>
+            </view>
+            
+             <!-- 商品内容列表 -->
+              <!-- 要跳转到其他页面去，就要使用<navigator></navigator>标签 -->
+               <!-- url="/pages/goods_details/goods_details?goods_id={{item.goods_id}}" 
+                    查看商品详情需要获取被点击的商品 goods_id-->
+              <navigator  class="list_content_one"
+                    wx:if="{{currenrIndex == 0}}"
+                    wx:for="{{goodsList}}"
+                    url="/pages/goods_details/goods_details?goods_id={{item.goods_id}}">
+                     <!-- 商品图片 -->
+                    <view class="left_img">
+                        <!-- src="{{item.goods_small_logo?item.goods_small_logo:'https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3464773220,4230398379&fm=26&gp=0.jpg'}}" 
+                             如果图片是数据里的图就直接使用，如果不是数据里面的图就使用另外一张图-->
+                        <image mode="widthFix" src="{{item.goods_small_logo?item.goods_small_logo:'https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3464773220,4230398379&fm=26&gp=0.jpg'}}" />
+                    </view>
+                    <!-- 商品标题及价格 -->
+                    <view class="right_content">
+                        <view class="goods_name">{{item.goods_name}}</view>
+                        <view class="goods_price">￥{{item.goods_price}}</view>
+                    </view> 
+              </navigator>
+            <view wx:if="{{currenrIndex == 1}}">bbb</view>
+            <view wx:if="{{currenrIndex == 2}}">ccc</view>
+        </view>
+    </view>
+</view>

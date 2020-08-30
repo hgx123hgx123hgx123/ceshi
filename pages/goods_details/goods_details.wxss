@@ -1,0 +1,110 @@
+page {
+  padding-bottom: 90rpx;
+}
+page .goods_detail swiper {
+  height: 450rpx;
+  text-align: center;
+}
+page .goods_detail swiper image {
+  width: 60%;
+}
+page .goods_detail .goods_price {
+  color: #F8554D;
+  margin: 20rpx 0 20rpx 20rpx;
+  font-size: 30rpx;
+  font-weight: 900;
+}
+page .goods_detail .detail_content {
+  border-top: 6rpx solid #E9E8E8;
+  border-bottom: 6rpx solid #E9E8E8;
+  padding: 10rpx 0;
+  display: flex;
+}
+page .goods_detail .detail_content .detail_title {
+  flex: 5;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  display: -webkit-box;
+}
+page .goods_detail .detail_content .detail_collect {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-left: 3rpx solid #282C34;
+}
+page .goods_detail .detail_content .detail_collect .icon-collection-b {
+  color: #F8554D;
+}
+page .goods_detail .image-text .title {
+  font-size: 35rpx;
+  color: #F8554D;
+  font-weight: 1000;
+  margin: 15rpx 0 15rpx 15rpx;
+}
+page .goods_detail .dedail_bottom {
+  border-top: 1rpx solid #ccc;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 90rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+}
+page .goods_detail .dedail_bottom .servie {
+  flex: 1;
+}
+page .goods_detail .dedail_bottom .servie .iconfont {
+  display: flex;
+  justify-content: center;
+}
+page .goods_detail .dedail_bottom .servie .servie_title {
+  display: flex;
+  justify-content: center;
+}
+page .goods_detail .dedail_bottom .share {
+  flex: 1;
+}
+page .goods_detail .dedail_bottom .share .iconfont {
+  display: flex;
+  justify-content: center;
+}
+page .goods_detail .dedail_bottom .share .share_title {
+  display: flex;
+  justify-content: center;
+}
+page .goods_detail .dedail_bottom .cart {
+  flex: 1;
+}
+page .goods_detail .dedail_bottom .cart .iconfont {
+  display: flex;
+  justify-content: center;
+}
+page .goods_detail .dedail_bottom .cart .cart_title {
+  display: flex;
+  justify-content: center;
+}
+page .goods_detail .dedail_bottom .addd_cart {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  background-color: #FFA500;
+}
+page .goods_detail .dedail_bottom .addd_cart .title {
+  margin-top: 25rpx;
+  font-weight: 1000;
+}
+page .goods_detail .dedail_bottom .buy {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  background-color: #EB4450;
+}
+page .goods_detail .dedail_bottom .buy .title {
+  margin-top: 25rpx;
+  font-weight: 1000;
+}

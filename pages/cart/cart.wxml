@@ -1,0 +1,79 @@
+<!-- 收货地址及获取地址按钮 -->
+<view class="group_site">
+<!-- 收货地址不存在，按钮显示 -->
+    <view class="get_site" wx:if="{{!address.userName}}">
+        <button class="site_but" bindtap="handleAddress">收货地址</button>
+    </view>
+    <!-- 当收货地址存在就显示地址 -->  
+     <view wx:else class="show_site">
+         <view class="name_tel">
+            <view class="name">{{address.userName}}</view>
+            <view class="tel">{{address.telNumber}}</view>
+         </view>
+         <view class="site">{{address.provinceName}}</view>
+        <view class="site">{{address.cityName}}</view>
+        <view class="site">{{address.countyName}}</view>
+        <view class="site">{{address.detailInfo}}</view>
+        
+     </view>
+</view>
+<!-- 购物车 -->
+<view class="cart">
+    <view class="cart_title">购物车</view>
+    <!-- 购物车内容 -->
+    <view class="cart_content">
+        <!-- block 标签是不会被渲染出来的block只接收控制属性： wx：if   || wx:for -->
+        <block wx:if="{{cart.length!==0}}" >
+            <view class="goods_detail" 
+                wx:for="{{cart}}" 
+                wx:key="goods_id">
+                <!-- 商品复选框 -->
+                <view class="select_box">
+                    <!-- checkbox-group 多项选择器 -->
+                    <!-- 选中商品时是要根据id进行选中的，所以在此要把商品的id传过去 -->
+                    <checkbox-group bindtap="handleSelectGoods" data-id="{{item.goods_id}}">
+                        <checkbox checked="{{item.checked}}"></checkbox>
+                    </checkbox-group>
+                </view>
+                    <!-- 购物车商品图片 -->
+                <view class="goods_img">
+                    <image mode="widthFix" src="{{item.goods_small_logo}}" />
+                </view>
+                    <!-- 购物车商品内容 -->
+                <view class="cart_dedail">
+                    <!-- 商品标题 -->
+                    <view class="title">{{item.goods_name}}</view>
+                    <view class="price">￥{{item.goods_price}}</view>
+                    <!-- 购物车数量加减框 -->
+                    <!-- data-id="{{item.goods_id}} 点击加或减是要传过去的id 
+                         data-operate="{{-1}}" 点击一次都会加或减 1 也要传过去-->
+                    <view class="goods_num">
+                        <view class="subtract" data-id="{{item.goods_id}}" data-operate="{{-1}}"  bindtap="handleEditNum">-</view>
+                        <view class="num">{{item.num}}</view>
+                        <view class="add" data-id="{{item.goods_id}}"  data-operate="{{1}}"  bindtap="handleEditNum">+</view>
+                    </view>
+                </view>
+                
+            </view>
+        </block>
+        <block wx:else>
+            <image mode="widthFix" src="data:image/jpeg;base64,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" />
+        </block>
+    </view>
+</view>    
+<!-- 购物车底部内容 -->
+<view class="bottom">
+    <view class="option">
+        <!-- checkbox-group 多项选择器 -->
+        <checkbox-group bindtap="handleSelectAllCheck">
+            <checkbox checked="{{allChecked}}">全选</checkbox>
+        </checkbox-group>
+    </view>
+    <view class="count">
+        合计：<text class="price">￥{{totalPrice}}</text>
+        <view >包含运费</view>
+    </view>
+    <view class="payment" bindtap="handleBalance">
+        <view class="title">结算{{totalNum}}</view>
+    </view>
+</view>

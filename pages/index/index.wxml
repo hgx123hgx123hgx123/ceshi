@@ -1,0 +1,62 @@
+<view class="home_index"><!--整个页面的最外层容器-->
+    <!--搜索框-->
+    <SearchInput/>
+
+    <!--轮播图-->
+    <!--轮播图的最外层容器-->
+    <view class="index_swiper">
+        <!--轮播图的第一个外层容器-->
+        <swiper autoplay indicator-dots circular interval="2000">
+            <!--循环项 wx:for="{{swiperList}}"将数据循环出来  wx:key="goods_id" key属性-->
+            <swiper-item 
+                wx:for="{{swiperList}}" 
+                wx:key="goods_id">
+                <!--导航标签-->
+                <navigator>
+                    <!--图片 渲染的图片路径src="{{item.image_src}}"-->
+                    <!--mode="widthFix"缩放模式，宽度不变，高度自动变化，保持原图宽高比不变-->
+                    <image mode="widthFix" src="{{item.image_src}}"></image>
+                </navigator>
+            </swiper-item>
+        </swiper>
+    </view>
+
+    <!--分类导航-->
+    <view class="index_nav">
+        <navigator
+        wx:for="{{navList}}"
+        wx:key="name">
+            <image mode="widthFix" src="{{item.image_src}}" />
+        </navigator>
+    </view>
+
+    <!--楼层-->
+    <view class="index_floor">
+        <!--第一层循环
+            因为是多层循环 所以循环项的名称改为 wx:for-item="item1" wx:for-index="index1"
+        -->
+       <view class="floor_group"
+            wx:for="{{floorList}}"
+            wx:for-item="item1"
+            wx:for-index="index1"
+            wx:key="floor_title">
+           <!--标题-->
+           <view class="floor_title">
+               <image mode="widthFix" src="{{item1.floor_title.image_src}}" />
+           </view>
+           <!--内容 第二层循环-->
+           <view class="floor_list">
+               <navigator 
+               wx:for="{{item1.product_list}}"
+               wx:for-item="item2"
+               wx:for-index="index2"
+               wx:key="name">
+               <!-- mode="{{index2===0?'widthFix':'scaleToFill'}}" 
+                    表示是第一张图片是0的时候'widthFix'缩放模式，宽度不变，高度自动变化，保持原图宽高比不变
+                    否侧 'scaleToFill'将图片的内容拉伸到图片的高度  -->
+                <image mode="{{index2===0?'widthFix':'scaleToFill'}}" src="{{item2.image_src}}" />
+               </navigator>
+           </view>
+       </view>
+    </view>
+</view>

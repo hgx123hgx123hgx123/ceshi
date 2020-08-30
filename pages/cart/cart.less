@@ -1,0 +1,155 @@
+page{
+    padding-bottom: 90rpx;
+    .group_site{
+        .get_site{
+            .site_but{
+            margin: 25rpx 175rpx;
+            width: 400rpx;
+            background-color: #fff;
+            border:3rpx solid #1AAD19;
+            color: #1AAD19;
+            font-weight:600;
+            }
+        }
+        .show_site{
+            overflow: hidden;
+            margin: 20rpx 0 20rpx 20rpx;
+           .name_tel{
+               display: flex;
+                .name{
+                    flex: 1;
+                }
+                .tel{
+                    flex: 3;
+                    padding-left: 430rpx;
+                }
+           }
+          .site{
+            float: left;  
+            padding: 5rpx 0 0 0;
+          }
+        }
+    }
+    
+    .cart{
+        overflow: hidden;
+        .cart_title{
+            // height: 80rpx;
+            border-top-style:solid;
+            border-top-width:3rpx;
+            border-top-color:#F8554D;
+            border-bottom-style:solid;
+            border-bottom-width:3rpx;
+            border-bottom-color:#F8554D;
+            padding: 20rpx 0 20rpx 20rpx;
+            font-weight:600;
+            color: #F8554D;
+            
+        }
+        .cart_content{
+            .goods_detail{
+                display: flex;
+                border-bottom: 1px solid #CECDCB;
+                margin: 10rpx 0;
+                .select_box{
+                    flex: 1;
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 76rpx;
+                }
+                .goods_img{
+                    flex: 2;
+                    display: flex;
+                    justify-content: center;
+                    align-content: center;
+                    image{
+                        width: 80%;
+                    }
+                }
+                .cart_dedail{
+                    flex: 3;
+                    
+                   overflow: hidden;
+                    .title{
+                        -webkit-line-clamp: 2;   // 多余两行的文字就 溢出...
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        padding: 20rpx 0 0 0;
+                    }
+                    .price{
+                        color: #F8554D;
+                        float: left;
+                        padding: 20rpx 0 0 0;
+                        font-size: 30rpx;
+                    }
+                    .goods_num{
+                        display: flex;
+                        padding: 20rpx 0 0 100rpx;
+                        
+                        .subtract{
+                            width: 45rpx;
+                            height: 45rpx;
+                            border-style:solid;
+                            border-width:3rpx;
+                            border-color:#CECDCB;
+                            text-align: center;
+   
+                        }
+                        .num{
+                            padding: 0 20rpx;
+                        }
+                        .add{
+                            width: 45rpx;
+                            height: 45rpx;
+                            border-style:solid;
+                            border-width:3rpx;
+                            border-color:#CECDCB;
+                            text-align: center; 
+                        }
+                    }
+                }
+            }
+            
+            
+        }
+
+    }
+    
+
+    .bottom{
+        border-top: 1rpx solid #ccc;
+        //生成固定定位的元素，相对于浏览器窗口进行定位。固定底部购物车栏
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 90rpx;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        .option{
+            flex: 2;
+            padding: 20rpx 0 0 20rpx;
+        }
+        .count{
+
+            .price{
+                flex: 3;
+                color:  #F8554D;
+                padding: 0 20rpx 0 0;
+            }
+        }
+        .payment{
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            background-color:  #F8554D;
+            .title{
+                padding: 25rpx 0 0 0;
+                font-weight: 800;
+                color: #fff;
+            }
+        }
+    }
+}

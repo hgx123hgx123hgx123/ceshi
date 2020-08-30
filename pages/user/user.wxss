@@ -1,0 +1,132 @@
+page {
+  background-color: #EDECE8;
+}
+page .back_img .backg {
+  filter: blur(5rpx);
+  position: relative;
+  height: 43vh;
+}
+page .back_img .photo {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  position: absolute;
+  left: 265rpx;
+  top: 60rpx;
+}
+page .back_img .name {
+  position: absolute;
+  left: 330rpx;
+  top: 280rpx;
+  color: #fff;
+}
+page .content {
+  top: -20px;
+  position: relative;
+}
+page .content .title {
+  height: 90rpx;
+  background-color: #fff;
+  margin: 0 30rpx;
+  display: flex;
+}
+page .content .title .num {
+  position: relative;
+  top: 10rpx;
+  right: -86rpx;
+  color: #F8554D;
+}
+page .content .title .title_list {
+  position: relative;
+  top: 45rpx;
+  margin: 0 11rpx;
+}
+page .content .order {
+  height: 90rpx;
+  background-color: #fff;
+  margin: 40rpx 30rpx 0;
+  display: flex;
+}
+page .content .order .order_title {
+  padding: 25rpx 0 30rpx 20rpx ;
+}
+page .content .order_status {
+  height: 120rpx;
+  background-color: #fff;
+  margin: 0 30rpx;
+  border-top-style: solid;
+  border-top-width: 3rpx;
+  border-top-color: #d3d3d3;
+  display: flex;
+}
+page .content .order_status .iconfont {
+  flex: 1;
+  color: #F8554D;
+  font-size: 50rpx;
+  position: relative;
+  top: 15rpx;
+  right: -70rpx;
+}
+page .content .order_status .order_title_list {
+  position: relative;
+  top: 75rpx;
+  padding: 0 11rpx;
+  right: 30rpx;
+}
+page .content .site {
+  height: 90rpx;
+  background-color: #fff;
+  margin: 40rpx 30rpx 0;
+  display: flex;
+}
+page .content .site .site_title {
+  padding: 25rpx 0 30rpx 20rpx ;
+}
+page .content .service {
+  height: 90rpx;
+  background-color: #fff;
+  margin: 40rpx 30rpx 0;
+  display: flex;
+  border-bottom-style: solid;
+  border-bottom-width: 3rpx;
+  border-bottom-color: #d3d3d3;
+}
+page .content .service .service_title {
+  padding: 25rpx 0 25rpx 20rpx ;
+}
+page .content .service .phone {
+  padding: 25rpx 0 25rpx 450rpx ;
+}
+page .content .opinion {
+  height: 90rpx;
+  background-color: #fff;
+  margin: 0 30rpx;
+  display: flex;
+  border-bottom-style: solid;
+  border-bottom-width: 3rpx;
+  border-bottom-color: #d3d3d3;
+}
+page .content .opinion .opinion_title {
+  padding: 25rpx 0 25rpx 20rpx ;
+}
+page .content .about {
+  height: 90rpx;
+  background-color: #fff;
+  margin: 0 30rpx;
+  border-bottom-style: solid;
+  border-bottom-width: 3rpx;
+  border-bottom-color: #d3d3d3;
+  display: flex;
+}
+page .content .about .about_title {
+  padding: 25rpx 0 25rpx 20rpx ;
+}
+page .content .share {
+  height: 90rpx;
+  background-color: #fff;
+  margin: 50rpx 30rpx;
+  display: flex;
+}
+page .content .share .share_title {
+  padding: 25rpx 0 25rpx 20rpx ;
+}

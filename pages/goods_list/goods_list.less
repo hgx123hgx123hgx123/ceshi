@@ -1,0 +1,49 @@
+.goods_list{
+    .goods_content{
+        .goods_content_title{
+            .title{
+                display: flex;
+                flex: 1;
+                .title_list{
+                    width: 100%;
+                    height: 100%;
+                    padding: 10rpx 96rpx;
+                }
+                .active{
+                    color: #F8554D;
+                    border-bottom-style:solid;
+                    border-bottom-width:8rpx; 
+                }
+            }
+            
+            .list_content_one{
+                border-bottom: solid;
+                border-bottom-width:1rpx;
+                border-bottom-color:rgb(194, 193, 193);
+                display: flex;
+                .left_img{
+                    flex: 2;
+                    image{ 
+                        width: 75%;
+                        padding: 0 35rpx;
+                        
+                    }
+                }
+                .right_content{
+                    flex: 3;
+                    .goods_name{
+                        margin: 5rpx 0 0 0;
+                        -webkit-line-clamp: 2;// 多余两行的文字就 溢出...
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                    }
+                    .goods_price{
+                        color:#F8554D;
+                    }
+                }
+                
+            }
+        }
+    }
+}

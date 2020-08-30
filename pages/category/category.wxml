@@ -1,0 +1,56 @@
+<view class="cates">
+    <!-- 搜索框 -->
+    <SearchInput/>
+     <!-- 分类内容 -->
+    <view class="cates_content">
+        <!-- 分类内容  左侧 （一级循环） -->
+        <scroll-view scroll-y class="cates_left">
+            <!-- wx:for="{{catesList}}" 循环出所有数据 -->
+            <!--data-index="{{index}}"定义被点击的菜单名(id)-->
+            <!--{{index===currenrIndex?'active':''}} 当点击的菜单是currenrIndex那么就是active（字体变红） 否则是（空） -->
+            <view class="menu_item {{index===currenrIndex?'active':''}}"
+                wx:for="{{catesList}}"
+                wx:key="cat_id"
+                bindtap="handleItemTap"
+                data-index="{{index}}"
+                >
+            {{item.cat_name}}
+            </view>
+        </scroll-view>
+        <!-- 分类内容  右侧 （二级循环） -->
+        <scroll-view scroll-y class="cates_right">
+            <!-- 右侧商品 -->
+            <!-- {{catesList[currenrIndex].children}} 循环出右侧商品的内容 
+                 catesList[currenrIndex] 左侧菜单栏的id 
+                 children左侧菜单栏id对应的子级内容-->
+            <view class="right_content"
+                wx:for="{{catesList[currenrIndex].children}}"
+                wx:key="cat_id"
+                >
+                     <!-- 右侧商品标题 -->
+                     <view class="goods_title">
+                         <text class="delimiter">/</text>
+                        <text class="title">{{item.cat_name}}</text>
+                        <text class="delimiter">/</text>
+                     </view>
+                    
+                <!-- 右侧商品内容  （三级循环）-->
+                <!-- {{item.children}}
+                     item是上一级循环项的别名
+                     children 是上一级内容的子级 -->
+                <view class="goods_content"
+                    wx:for="{{item.children}}"
+                    wx:key="{{item.cat_id}}"
+                    >
+                    <navigator url="/pages/goods_list/goods_list">
+                        <!-- 右侧商品内容的图片 -->
+                        <image mode="widthFix" src="{{item.cat_icon}}"/>
+                        <!-- 右侧商品内容的标题 -->
+                        <view class="goods_name">{{item.cat_name}}</view>
+                    </navigator>
+                </view>
+            </view>
+        </scroll-view>  
+    </view>
+</view>
+   

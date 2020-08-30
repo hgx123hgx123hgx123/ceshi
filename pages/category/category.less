@@ -1,0 +1,59 @@
+page{
+     // 页面的高是100%
+     height: 100%;
+     .cates{
+         // 分类页面的高度也是100%，继承父元素的高度
+        height: 100%;
+        .cates_content{
+            // 内容的高度是整个页面的高度减去搜索框的高度
+            // 括号里面的数组及符号都要留空格，否则无效
+            height: ~'calc( 100vh - 90rpx )';
+            // 开启伸缩盒子
+            display: flex;
+            .cates_left{
+                // 左边占2份
+                flex: 2; 
+                text-align:center;
+                line-height:280%;
+                .active{
+                    color:#F8554D;
+                    border-left: 5px solid currentColor;
+                    
+                }
+            }
+            .cates_right{
+                // 右边占5份
+                flex: 5;
+                .right_content{
+                    overflow: hidden;
+                    padding: 0 0 0 35rpx;
+                    .goods_title{
+                        height: 88rpx; // 标题的高
+                        display: flex;
+                        justify-content:center;
+                        align-content:center;
+                        padding: 0 80rpx 0 0;
+                        .delimiter{
+                            color:#c9c7c7;
+                            padding: 0 15rpx;
+                        }
+                        .title{
+                            
+                        }
+                    }
+                    .goods_content{
+                        float: left;
+                        width: 33.33%;
+                        navigator{
+                            image{
+                                width: 50%;
+                            }
+                            .goods_name{}
+                        }
+                        
+                    }
+                }
+            }
+        }
+     }
+}

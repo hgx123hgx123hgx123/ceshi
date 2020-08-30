@@ -1,0 +1,60 @@
+<view class="">
+    <!-- 背景图  头像 -->
+    <view class="back_img">
+        <!-- 背景图 -->
+        <image class="backg" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2766063163,1895486246&fm=26&gp=0.jpg"></image>
+        <!-- 头像 -->
+        <image class="photo" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2766063163,1895486246&fm=26&gp=0.jpg"></image>
+        <text class="name">千语</text>
+    </view>
+    <!-- 用户中心标题 -->
+    <view class="content">
+        <view class="title">
+            <view class="num">0</view>
+            <view class="title_list">收藏的店铺</view>
+            <view class="num">0</view>
+            <view class="title_list">收藏的商品</view>
+            <view class="num">0</view>
+            <view class="title_list">关注的商品</view>
+            <view class="num">0</view>
+            <view class="title_list">我的足迹</view>
+        </view>
+    
+        <!-- 订单 -->
+        <view class="order">
+            <text class="order_title">我的订单</text>
+        </view>
+        <!-- 订单状态 -->
+        <view class="order_status">
+            <view class="iconfont icon-dingdan-"></view>
+            <view class="order_title_list">全部订单</view>
+            <view class="iconfont icon-daifukuan"></view>
+            <view class="order_title_list">代付款</view>
+            <view class="iconfont icon-daishouhuo"></view>
+            <view class="order_title_list">代收款</view>
+            <view class="iconfont icon-tuihuo"></view>
+            <view class="order_title_list">退款/退货</view>
+        </view>
+        <!-- 收货地址 -->
+        <view class="site">
+            <text class="site_title">收货地址管理</text>
+        </view>
+        <!-- 联系客服 -->
+        <view class="service">
+            <text class="service_title">联系客服</text>
+            <view class="phone">10086</view>
+        </view>
+        <!-- 意见反馈 -->
+        <view class="opinion">
+            <text class="opinion_title">意见反馈</text>
+        </view>
+        <!-- 关于我们 -->
+        <view class="about">
+            <text class="about_title">关于我们</text>
+        </view>
+        <view class="share">
+            <text class="share_title">把应用推荐给其他人</text>
+        </view>
+    </view>
+    
+</view>
